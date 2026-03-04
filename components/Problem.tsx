@@ -1,0 +1,114 @@
+"use client";
+
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import AnimatedCounter from "./AnimatedCounter";
+
+const stats = [
+  {
+    value: 9,
+    suffix: "%",
+    label: "Mulheres na base IG",
+  },
+  {
+    value: 800,
+    prefix: "~",
+    suffix: "",
+    label: "Mulheres no Intercom",
+  },
+  {
+    value: 20,
+    suffix: "%",
+    label: "Mulheres em tech",
+  },
+  {
+    value: 47,
+    prefix: "+",
+    suffix: "%",
+    label: "Crescimento mulheres + IA",
+  },
+];
+
+export default function Problem() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  return (
+    <section ref={ref} className="relative py-24 px-4">
+      <div className="max-w-6xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <span className="inline-block text-purple-light/60 text-xs uppercase tracking-[0.25em] mb-4">
+            O problema
+          </span>
+          <h2 className="font-[family-name:var(--font-space-grotesk)] text-3xl md:text-5xl font-bold mb-4">
+            Dados reais da Cultura Builder
+          </h2>
+        </motion.div>
+
+        {/* Big number */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={isInView ? { opacity: 1, scale: 1 } : {}}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-center mb-14"
+        >
+          <AnimatedCounter
+            target={9}
+            suffix="%"
+            className="font-[family-name:var(--font-space-grotesk)] text-8xl md:text-[10rem] font-bold text-gradient-purple"
+          />
+          <p className="text-xl md:text-2xl text-white/60 mt-4">
+            do nosso público é feminino.
+          </p>
+          <p className="text-lg text-white/40 mt-2">
+            Isso não é uma estatística.{" "}
+            <span className="text-white font-semibold">É um problema.</span>
+          </p>
+        </motion.div>
+
+        {/* Stats grid - minimalist tech boxes */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-14">
+          {stats.map((stat, i) => (
+            <motion.div
+              key={stat.label}
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
+              className="card-shine glass glass-hover rounded-2xl p-6 text-center transition-all duration-500"
+            >
+              <AnimatedCounter
+                target={stat.value}
+                suffix={stat.suffix}
+                prefix={stat.prefix}
+                className="text-3xl md:text-4xl font-bold text-purple-light font-[family-name:var(--font-space-grotesk)]"
+              />
+              <p className="text-xs text-white/30 uppercase tracking-wider mt-2">
+                {stat.label}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Transition */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="text-center"
+        >
+          <p className="text-lg md:text-xl text-white/50">
+            Toda a concorrência também é dominada por homens.
+          </p>
+          <p className="text-xl md:text-2xl font-bold text-gradient-purple mt-2">
+            Essa semana, a porta está aberta.
+          </p>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
