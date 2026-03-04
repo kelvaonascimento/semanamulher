@@ -213,7 +213,7 @@ export default function SocialProof() {
               <span className="text-white/20">nesta semana</span>
             </p>
             <a
-              href="https://hub.culturabuilder.com"
+              href="https://hub.culturabuilder.com/hub/subscription?couponCode=OFF100SDMCB&planId=3"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-4 text-green-cta hover:text-white text-xs font-bold transition-colors flex items-center gap-1"
@@ -243,7 +243,7 @@ export default function SocialProof() {
             <span className="text-white font-semibold">Hub Cultura Builder</span>.
           </p>
           <a
-            href="https://hub.culturabuilder.com"
+            href="https://hub.culturabuilder.com/hub/subscription?couponCode=OFF100SDMCB&planId=3"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-green-cta hover:text-white font-bold transition-colors"

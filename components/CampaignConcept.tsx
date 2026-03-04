@@ -2,130 +2,296 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
+
+const forYou = [
+  { num: "01", text: "Quer aprender IA mas não sabe por onde começar" },
+  { num: "02", text: "Deseja criar apps e automações sem programar" },
+  { num: "03", text: "Quer fazer parte de uma comunidade de mulheres que constroem" },
+  { num: "04", text: "Busca uma transformação real na sua carreira com tecnologia" },
+  { num: "05", text: "Quer acesso a ferramentas profissionais de IA gratuitamente" },
+  { num: "06", text: "Deseja se inspirar e celebrar cada conquista junto com outras mulheres" },
+];
 
 export default function CampaignConcept() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="relative py-24 px-4 bg-white">
-      <div className="max-w-5xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <span className="inline-block text-purple-dark/60 text-xs uppercase tracking-[0.25em] mb-4 font-medium">
-            Sobre a campanha
-          </span>
-          <h2 className="font-[family-name:var(--font-space-grotesk)] text-3xl md:text-5xl font-bold text-gray-900 mb-6">
-            Mulheres que{" "}
-            <span className="bg-gradient-to-r from-purple-dark to-purple-light bg-clip-text text-transparent">
-              Constroem
-            </span>
-          </h2>
-          <p className="text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed">
-            A Cultura Builder é a maior comunidade de builders da América Latina.
-            E na Semana da Mulher 2026, estamos abrindo as portas para quem quer
-            construir com IA — sem precisar programar.
-          </p>
-        </motion.div>
+    <>
+      {/* Section 1: Hero visual + "Para quem é" - Inspired by Missão ELA hero */}
+      <section
+        ref={ref}
+        className="relative py-0 overflow-hidden"
+        style={{ background: "linear-gradient(180deg, #1a1020 0%, #0F0F0F 100%)" }}
+      >
+        {/* Full-width hero image with overlay - like Missão ELA */}
+        <div className="relative h-[500px] md:h-[600px] overflow-hidden">
+          <Image
+            src="/images/women-collab.png"
+            alt="Mulheres construindo com tecnologia"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+          {/* Gradient overlays */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1a1020] via-[#1a1020]/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#1a1020]/80 to-transparent" />
 
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-          {/* Left - Text */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <h3 className="font-[family-name:var(--font-space-grotesk)] text-2xl font-bold text-gray-900 mb-4">
-              Por que essa campanha existe?
-            </h3>
-            <p className="text-gray-500 leading-relaxed mb-4">
-              Apenas <strong className="text-purple-dark">9% do nosso público é feminino</strong>.
-              Enquanto mulheres representam 47% do crescimento em cursos de IA,
-              a nossa comunidade — e toda a concorrência — continua dominada por homens.
-            </p>
-            <p className="text-gray-500 leading-relaxed mb-6">
-              Isso não é uma estatística. É um problema. E a gente decidiu fazer
-              algo sobre isso. Esta semana, a porta está aberta: trial gratuito,
-              bolsas integrais e desconto exclusivo para mulheres que querem aprender
-              IA e construir projetos reais.
-            </p>
-            <div className="flex items-center gap-4">
-              <div className="h-px flex-1 bg-gray-200" />
-              <p className="text-purple-dark font-[family-name:var(--font-space-grotesk)] font-bold text-sm whitespace-nowrap">
-                02 a 08 de Março de 2026
-              </p>
-              <div className="h-px flex-1 bg-gray-200" />
+          {/* Content over image */}
+          <div className="absolute inset-0 flex items-end">
+            <div className="max-w-5xl mx-auto px-4 pb-16 w-full">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.7 }}
+                className="max-w-lg"
+              >
+                <span className="inline-block bg-purple-light/20 backdrop-blur-sm border border-purple-light/30 text-purple-glow text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-6">
+                  Mulheres que Constroem
+                </span>
+                <h2 className="font-[family-name:var(--font-space-grotesk)] text-3xl md:text-5xl font-bold text-white leading-tight mb-4">
+                  O lugar onde mulheres
+                  <br />
+                  aprendem IA e{" "}
+                  <span className="text-purple-glow">constroem</span>
+                </h2>
+                <p className="text-white/60 text-sm md:text-base leading-relaxed mb-6 max-w-md">
+                  Aqui, você será acolhida, inspirada e guiada para criar projetos
+                  reais com inteligência artificial. Sem precisar programar.
+                </p>
+                <a
+                  href="#trial"
+                  className="inline-flex items-center gap-3 border-2 border-white/30 hover:border-white hover:bg-white/10 text-white font-bold px-7 py-3.5 rounded-full transition-all duration-300 hover:scale-[1.02] backdrop-blur-sm group"
+                >
+                  QUERO FAZER PARTE
+                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                  </svg>
+                </a>
+              </motion.div>
             </div>
+          </div>
+        </div>
+
+        {/* "Para quem é" numbered grid */}
+        <div className="max-w-5xl mx-auto px-4 py-20">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-14"
+          >
+            <span className="inline-block bg-purple-light/10 border border-purple-light/20 text-purple-glow text-xs uppercase tracking-[0.25em] px-5 py-2 rounded-full mb-6 font-medium">
+              Para quem é
+            </span>
+            <h2 className="font-[family-name:var(--font-space-grotesk)] text-3xl md:text-5xl font-bold mb-4">
+              Essa campanha é para você que:
+            </h2>
           </motion.div>
 
-          {/* Right - Cards */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="space-y-4"
-          >
-            {[
-              {
-                num: "01",
-                title: "Não é sobre flores",
-                desc: "É sobre oportunidade real. Acesso a ferramentas, conhecimento e comunidade que transforma carreiras.",
-              },
-              {
-                num: "02",
-                title: "Não precisa saber programar",
-                desc: "Com IA e no-code, qualquer mulher pode criar apps, automações e projetos profissionais do zero.",
-              },
-              {
-                num: "03",
-                title: "Não é parabéns, é ação",
-                desc: "7 dias grátis, 5 bolsas integrais e 30% OFF. Três caminhos concretos para começar agora.",
-              },
-            ].map((item, i) => (
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 mb-14">
+            {forYou.map((item, i) => (
               <motion.div
                 key={item.num}
                 initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.4, delay: 0.4 + i * 0.1 }}
-                className="flex gap-5 p-5 rounded-2xl border border-gray-100 hover:border-purple-light/30 hover:shadow-lg hover:shadow-purple-dark/5 transition-all duration-300 group"
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+                className="group relative border border-white/10 hover:border-purple-light/40 rounded-2xl p-6 transition-all duration-500 hover:bg-white/[0.03]"
               >
-                <span className="font-[family-name:var(--font-space-grotesk)] text-3xl font-bold text-purple-light/30 group-hover:text-purple-light transition-colors shrink-0">
+                <span className="font-[family-name:var(--font-space-grotesk)] text-4xl font-bold text-purple-light/15 group-hover:text-purple-light/30 transition-colors duration-500 block mb-3">
                   {item.num}
                 </span>
-                <div>
-                  <h4 className="font-bold text-gray-900 mb-1 group-hover:text-purple-dark transition-colors">
-                    {item.title}
-                  </h4>
-                  <p className="text-gray-400 text-sm leading-relaxed">
-                    {item.desc}
-                  </p>
-                </div>
+                <p className="text-white/60 text-sm leading-relaxed group-hover:text-white/80 transition-colors duration-300">
+                  {item.text}
+                </p>
               </motion.div>
             ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="text-center"
+          >
+            <p className="text-xl md:text-2xl text-white/70 mb-6 max-w-2xl mx-auto leading-relaxed">
+              Esteja pronta para viver sua nova fase com{" "}
+              <strong className="text-white">clareza</strong>,{" "}
+              <strong className="text-white">ferramentas</strong> e{" "}
+              <strong className="text-white">comunidade</strong>.
+            </p>
+            <a
+              href="#trial"
+              className="inline-flex items-center gap-3 border-2 border-purple-light/40 hover:border-purple-light hover:bg-purple-light/10 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 hover:scale-[1.02] group"
+            >
+              QUERO FAZER PARTE
+              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+              </svg>
+            </a>
           </motion.div>
         </div>
+      </section>
 
-        {/* Bottom quote */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          className="text-center"
-        >
-          <div className="inline-block bg-gradient-to-r from-purple-dark to-purple-light rounded-2xl px-10 py-6">
-            <p className="font-[family-name:var(--font-space-grotesk)] text-white text-xl md:text-2xl font-bold">
-              &ldquo;Não é sobre flores. É sobre código.&rdquo;
-            </p>
-            <p className="text-white/60 text-sm mt-2">
-              Cultura Builder — Semana da Mulher 2026
-            </p>
+      {/* Section 2: White concept - like Clínica Aura's "Descubra" section */}
+      <section className="relative py-24 px-4 bg-white overflow-hidden">
+        <div className="absolute top-1/2 right-0 -translate-y-1/2 font-[family-name:var(--font-space-grotesk)] text-[180px] md:text-[280px] font-bold text-purple-dark/[0.03] leading-none select-none pointer-events-none">
+          CB
+        </div>
+
+        <div className="relative max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+            {/* Left - Image like Clínica Aura hero image */}
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.7 }}
+              className="relative"
+            >
+              <div className="relative rounded-3xl overflow-hidden aspect-[4/5]">
+                <Image
+                  src="/images/hero-woman.png"
+                  alt="Mulher tech construindo com IA"
+                  fill
+                  className="object-cover"
+                />
+                {/* Subtle gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-purple-dark/40 to-transparent" />
+              </div>
+
+              {/* Floating badges over image */}
+              <div className="absolute -bottom-4 -right-4 md:right-4 bg-green-cta text-white text-xs font-bold px-5 py-3 rounded-2xl shadow-lg shadow-green-cta/20">
+                100% GRÁTIS
+              </div>
+              <div className="absolute top-6 -left-2 md:-left-4 bg-white text-purple-dark text-xs font-bold px-4 py-2.5 rounded-xl shadow-lg flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-green-cta animate-pulse" />
+                Vagas abertas
+              </div>
+            </motion.div>
+
+            {/* Right - Text content */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+            >
+              <span className="inline-block text-purple-dark/50 text-xs uppercase tracking-[0.25em] mb-4 font-medium">
+                Conheça
+              </span>
+              <h3 className="font-[family-name:var(--font-space-grotesk)] text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+                O que é a campanha
+                <br />
+                <span className="bg-gradient-to-r from-purple-dark to-purple-light bg-clip-text text-transparent">
+                  Mulheres que Constroem?
+                </span>
+              </h3>
+
+              <div className="space-y-4 mb-8">
+                <p className="text-gray-500 leading-relaxed">
+                  A Cultura Builder é a <strong className="text-gray-700">maior comunidade de builders da América Latina</strong>.
+                  Mas apenas 9% do nosso público é feminino. Enquanto mulheres representam 47% do crescimento
+                  em cursos de IA, nossa comunidade — e toda a concorrência — continua dominada por homens.
+                </p>
+                <p className="text-gray-500 leading-relaxed">
+                  Na Semana da Mulher 2026, decidimos agir: <strong className="text-gray-700">7 dias grátis no Hub Premium</strong>,{" "}
+                  <strong className="text-gray-700">5 bolsas integrais</strong> de 1 ano e{" "}
+                  <strong className="text-gray-700">30% OFF exclusivo</strong>.
+                  Três caminhos concretos para mulheres que querem aprender IA e construir sem programar.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3 mb-8">
+                {[
+                  { icon: "✦", label: "12 cursos de IA", sub: "do zero ao avançado" },
+                  { icon: "✦", label: "Brother AI", sub: "assistente pessoal 24/7" },
+                  { icon: "✦", label: "+R$ 20k em créditos", sub: "AWS e NVIDIA inclusos" },
+                  { icon: "✦", label: "Sem programar", sub: "no-code + IA generativa" },
+                ].map((feat) => (
+                  <div key={feat.label} className="flex items-start gap-3 p-3 rounded-xl hover:bg-gray-50 transition-colors">
+                    <span className="text-purple-light text-sm mt-0.5">{feat.icon}</span>
+                    <div>
+                      <p className="text-gray-800 text-sm font-medium">{feat.label}</p>
+                      <p className="text-gray-400 text-xs">{feat.sub}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex items-center gap-4">
+                <a
+                  href="#trial"
+                  className="inline-flex items-center gap-2 bg-purple-dark hover:bg-purple-light text-white font-bold text-sm px-7 py-3.5 rounded-full transition-all duration-300 hover:scale-[1.02]"
+                >
+                  QUERO FAZER PARTE
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                  </svg>
+                </a>
+                <span className="text-gray-400 text-xs">02 — 08 de Março</span>
+              </div>
+            </motion.div>
           </div>
-        </motion.div>
-      </div>
-    </section>
+
+          {/* Laptop mockup section below - like Missão ELA */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7 }}
+            className="mt-20 relative"
+          >
+            <div className="relative bg-gradient-to-br from-[#1a1020] to-purple-dark rounded-3xl p-8 md:p-12 overflow-hidden">
+              <div className="absolute inset-0 opacity-30">
+                <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-purple-light rounded-full blur-[120px]" />
+              </div>
+
+              <div className="relative grid md:grid-cols-2 gap-8 items-center">
+                {/* Laptop image */}
+                <div className="relative aspect-[16/10] rounded-xl overflow-hidden">
+                  <Image
+                    src="/images/laptop-mockup.png"
+                    alt="Hub Cultura Builder - Dashboard"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+
+                {/* Text */}
+                <div>
+                  <span className="inline-block bg-white/10 text-white/60 text-xs uppercase tracking-wider px-3 py-1 rounded-full mb-4 font-medium border border-white/10">
+                    Hub Premium
+                  </span>
+                  <h3 className="font-[family-name:var(--font-space-grotesk)] text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
+                    No Hub, você vai construir:
+                  </h3>
+                  <ul className="space-y-3">
+                    {[
+                      "Seu primeiro app com IA — do zero",
+                      "Automações profissionais sem código",
+                      "Projetos reais para seu portfólio",
+                      "Soluções com Claude Code e Brother AI",
+                      "Imagens e vídeos com IA generativa",
+                    ].map((item) => (
+                      <li key={item} className="flex items-center gap-3 text-white/70 text-sm">
+                        <svg className="w-4 h-4 text-green-cta shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    </>
   );
 }
