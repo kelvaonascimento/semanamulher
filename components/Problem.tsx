@@ -39,7 +39,15 @@ export default function Problem() {
 
   return (
     <section ref={ref} className="relative py-24 px-4">
-      <div className="max-w-6xl mx-auto">
+      {/* AI-generated background */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div
+          className="absolute inset-0 opacity-30 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/images/bg-section-1.png')" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-dark via-dark/50 to-dark" />
+      </div>
+      <div className="relative max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}

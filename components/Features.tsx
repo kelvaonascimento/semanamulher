@@ -85,7 +85,11 @@ export default function Features() {
   return (
     <section ref={ref} className="relative py-24 px-4">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-purple-dark/5 rounded-full blur-[200px]" />
+        <div
+          className="absolute inset-0 opacity-20 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/images/bg-section-2.png')" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-dark via-dark/60 to-dark" />
       </div>
 
       <div className="relative max-w-6xl mx-auto">

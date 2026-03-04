@@ -155,7 +155,7 @@ export default function CampaignConcept() {
             >
               <div className="relative rounded-3xl overflow-hidden aspect-[4/5]">
                 <Image
-                  src="/images/hero-woman.png"
+                  src="/images/campaign-woman.png"
                   alt="Mulher tech construindo com IA"
                   fill
                   className="object-cover"
