@@ -255,8 +255,8 @@ export default function CampaignConcept() {
                 {/* Laptop image */}
                 <div className="relative aspect-[16/10] rounded-xl overflow-hidden">
                   <Image
-                    src="/images/laptop-mockup.png"
-                    alt="Hub Cultura Builder - Dashboard"
+                    src="/images/laptop-cb.png"
+                    alt="Hub Cultura Builder - Plataforma"
                     fill
                     className="object-contain"
                   />

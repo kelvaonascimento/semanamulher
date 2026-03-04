@@ -1,230 +1,132 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Countdown from "./Countdown";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden">
-      {/* Background layers */}
+    <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Background: AI-generated woman integrated into scene */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-dark" />
-        <div className="absolute inset-0 opacity-40">
-          <div
-            className="absolute w-[800px] h-[800px] -top-[200px] -left-[200px] rounded-full"
-            style={{
-              background: "radial-gradient(circle, #6B21A8 0%, transparent 70%)",
-              animation: "float1 15s ease-in-out infinite",
-            }}
-          />
-          <div
-            className="absolute w-[600px] h-[600px] top-[20%] right-[-100px] rounded-full"
-            style={{
-              background: "radial-gradient(circle, #A855F7 0%, transparent 70%)",
-              animation: "float2 18s ease-in-out infinite",
-            }}
-          />
-          <div
-            className="absolute w-[500px] h-[500px] bottom-[-100px] left-[30%] rounded-full"
-            style={{
-              background: "radial-gradient(circle, #7C3AED 0%, transparent 70%)",
-              animation: "float3 20s ease-in-out infinite",
-            }}
-          />
-        </div>
-        <div className="absolute inset-0 opacity-[0.03] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIzMDAiIGZpbHRlcj0idXJsKCNhKSIgb3BhY2l0eT0iMSIvPjwvc3ZnPg==')]" />
+        {/* Desktop bg - ultra wide with woman center-right */}
+        <div
+          className="absolute inset-0 hidden md:block bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/images/hero-bg.png')" }}
+        />
+        {/* Mobile bg - portrait with woman centered */}
+        <div
+          className="absolute inset-0 md:hidden bg-cover bg-top bg-no-repeat"
+          style={{ backgroundImage: "url('/images/hero-bg-mobile.png')" }}
+        />
+        {/* Dark overlays for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-dark/90 via-dark/60 to-dark/30 hidden md:block" />
+        <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/70 to-dark/30 md:hidden" />
+        {/* Bottom fade */}
+        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-dark to-transparent" />
+        {/* Noise texture */}
+        <div className="absolute inset-0 opacity-[0.04] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIzMDAiIGZpbHRlcj0idXJsKCNhKSIgb3BhY2l0eT0iMSIvPjwvc3ZnPg==')]" />
       </div>
 
-      {/* Floating code snippets - hidden on mobile for clean look */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none hidden md:block">
-        <motion.div
-          animate={{ y: [0, -20, 0], opacity: [0.04, 0.08, 0.04] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-[15%] left-[5%] font-mono text-sm text-purple-light"
-        >
-          {"const app = await buildWithAI()"}
-        </motion.div>
-        <motion.div
-          animate={{ y: [0, 15, 0], opacity: [0.03, 0.07, 0.03] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute top-[25%] right-[8%] font-mono text-xs text-purple-light"
-        >
-          {"import { future } from 'cultura-builder'"}
-        </motion.div>
-        <motion.div
-          animate={{ y: [0, -10, 0], opacity: [0.03, 0.06, 0.03] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-          className="absolute bottom-[35%] left-[8%] font-mono text-xs text-purple-glow"
-        >
-          {"// mulheres que constroem"}
-        </motion.div>
-      </div>
+      {/* Content - text on the left, woman is in the background */}
+      <div className="relative z-10 max-w-6xl mx-auto px-4 w-full pt-32 pb-20 md:pt-40 md:pb-28">
+        <div className="max-w-xl">
+          {/* Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 20, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-2 bg-purple-dark/50 border border-purple-light/20 rounded-full px-5 py-2.5 mb-8 backdrop-blur-sm"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-light opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-light" />
+            </span>
+            <span className="text-sm text-purple-glow font-medium">
+              Semana da Mulher 2026
+            </span>
+          </motion.div>
 
-      {/* Main content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 pt-24 md:pt-32 pb-20">
-        {/* MOBILE: Woman image on top */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-          className="md:hidden flex justify-center mb-8"
-        >
-          <div className="relative w-48 h-48 rounded-full overflow-hidden border-2 border-purple-light/30 shadow-[0_0_60px_rgba(168,85,247,0.3)]">
-            <Image
-              src="/images/hero-woman-2.png"
-              alt="Mulher tech"
-              fill
-              className="object-cover object-top"
-              priority
-            />
-          </div>
-        </motion.div>
+          {/* Headline */}
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="font-[family-name:var(--font-space-grotesk)] text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.05] mb-6"
+          >
+            Não é sobre flores.
+            <br />
+            <span className="text-gradient-purple">É sobre código.</span>
+          </motion.h1>
 
-        {/* Desktop: Two columns */}
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-          {/* Left - Text */}
-          <div className="text-center md:text-left">
-            {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20, scale: 0.9 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 bg-purple-dark/40 border border-purple-light/20 rounded-full px-5 py-2.5 mb-8 backdrop-blur-sm"
+          {/* Subheadline */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-base md:text-lg text-white/70 max-w-md mb-8 leading-relaxed"
+          >
+            7 dias <strong className="text-white">GRÁTIS</strong> no Hub Cultura
+            Builder. 12 cursos de IA e no-code. Brother AI incluso.{" "}
+            <strong className="text-white">Sem cartão. Sem compromisso.</strong>
+          </motion.p>
+
+          {/* CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="flex flex-col sm:flex-row items-start gap-4 mb-10"
+          >
+            <a
+              href="#trial"
+              className="group inline-flex items-center gap-3 bg-green-cta hover:bg-green-cta-hover text-white font-bold text-lg px-10 py-4 rounded-full transition-all duration-300 pulse-cta hover:scale-105"
             >
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-light opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-light" />
-              </span>
-              <span className="text-sm text-purple-glow font-medium">
-                Semana da Mulher 2026
-              </span>
-            </motion.div>
-
-            {/* Headline */}
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="font-[family-name:var(--font-space-grotesk)] text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.05] mb-6"
-            >
-              Não é sobre flores.
-              <br />
-              <span className="text-gradient-purple">É sobre código.</span>
-            </motion.h1>
-
-            {/* Subheadline */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-base md:text-lg text-white/60 max-w-lg mx-auto md:mx-0 mb-8 leading-relaxed"
-            >
-              7 dias <strong className="text-white">GRÁTIS</strong> no Hub Cultura
-              Builder. 12 cursos de IA e no-code. Brother AI incluso.{" "}
-              <strong className="text-white">Sem cartão.</strong>
-            </motion.p>
-
-            {/* CTA */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="flex flex-col items-center md:items-start gap-4"
-            >
-              <a
-                href="#trial"
-                className="group inline-flex items-center gap-3 bg-green-cta hover:bg-green-cta-hover text-white font-bold text-lg px-10 py-4 rounded-full transition-all duration-300 pulse-cta hover:scale-105"
+              COMEÇAR AGORA — É GRÁTIS
+              <svg
+                className="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
               >
-                COMEÇAR AGORA — É GRÁTIS
-                <svg
-                  className="w-5 h-5 group-hover:translate-x-1 transition-transform"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 7l5 5m0 0l-5 5m5-5H6"
-                  />
-                </svg>
-              </a>
-              <span className="text-sm text-white/30">
-                +100 mulheres já se inscreveram esta semana
-              </span>
-            </motion.div>
-
-            {/* Countdown */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className="mt-10 flex flex-col items-center md:items-start gap-3"
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
+                />
+              </svg>
+            </a>
+            <a
+              href="#bolsas"
+              className="inline-flex items-center gap-2 border border-white/20 hover:border-purple-light/50 text-white/80 hover:text-white font-medium text-sm px-6 py-4 rounded-full transition-all duration-300 backdrop-blur-sm"
             >
-              <p className="text-xs text-white/40 uppercase tracking-[0.2em]">
+              Concorrer à bolsa
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
+          </motion.div>
+
+          {/* Social proof + Countdown */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            className="flex flex-col sm:flex-row items-start sm:items-center gap-6"
+          >
+            <div>
+              <p className="text-xs text-white/30 uppercase tracking-[0.15em] mb-2">
                 A porta fecha em
               </p>
               <Countdown />
-            </motion.div>
-          </div>
-
-          {/* Right - Woman image (desktop only) */}
-          <motion.div
-            initial={{ opacity: 0, x: 40, scale: 0.95 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="hidden md:block relative"
-          >
-            <div className="relative">
-              {/* Glow behind image */}
-              <div className="absolute -inset-8 bg-purple-light/20 rounded-full blur-[80px]" />
-
-              {/* Main image */}
-              <div className="relative aspect-[3/4] rounded-3xl overflow-hidden border border-purple-light/20 shadow-2xl shadow-purple-dark/50">
-                <Image
-                  src="/images/hero-woman-2.png"
-                  alt="Mulher tech construindo com IA"
-                  fill
-                  className="object-cover object-top"
-                  priority
-                />
-                {/* Gradient overlay bottom */}
-                <div className="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent to-transparent" />
-
-                {/* Floating info on image */}
-                <div className="absolute bottom-6 left-6 right-6">
-                  <div className="bg-dark/60 backdrop-blur-md border border-white/10 rounded-2xl p-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full bg-green-cta animate-pulse" />
-                      <p className="text-white/80 text-sm font-medium">
-                        Construindo com IA
-                      </p>
-                    </div>
-                    <p className="text-white/40 text-xs mt-1 ml-5">
-                      Sem programar. Sem limites.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating badge */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 1 }}
-                className="absolute -top-4 -right-4 bg-purple-light text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-lg shadow-purple-light/30 z-10"
-              >
-                02 — 08 MAR
-              </motion.div>
             </div>
+            <div className="hidden sm:block w-px h-10 bg-white/10" />
+            <p className="text-sm text-white/30">
+              +100 mulheres já se inscreveram
+            </p>
           </motion.div>
         </div>
       </div>
-
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-dark to-transparent" />
     </section>
   );
 }
