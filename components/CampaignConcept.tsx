@@ -252,14 +252,35 @@ export default function CampaignConcept() {
               </div>
 
               <div className="relative grid md:grid-cols-2 gap-8 items-center">
-                {/* Laptop image */}
-                <div className="relative aspect-[16/10] rounded-xl overflow-hidden">
-                  <Image
-                    src="/images/laptop-cb.png"
-                    alt="Hub Cultura Builder - Plataforma"
-                    fill
-                    className="object-contain"
-                  />
+                {/* MacBook mockup with real screenshot */}
+                <div className="relative">
+                  {/* MacBook frame */}
+                  <div className="bg-[#1c1c1e] rounded-xl overflow-hidden shadow-2xl shadow-black/50 border border-white/10">
+                    {/* Top bar */}
+                    <div className="flex items-center gap-2 px-4 py-2.5 bg-[#2a2a2c] border-b border-white/5">
+                      <div className="flex gap-1.5">
+                        <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
+                        <div className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
+                        <div className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
+                      </div>
+                      <div className="flex-1 flex justify-center">
+                        <div className="bg-white/5 rounded-md px-12 py-1 text-[10px] text-white/30 font-mono">
+                          culturabuilder.com
+                        </div>
+                      </div>
+                    </div>
+                    {/* Screenshot */}
+                    <div className="relative aspect-[16/10] overflow-hidden">
+                      <Image
+                        src="/images/laptop-cb.png"
+                        alt="Hub Cultura Builder - Plataforma"
+                        fill
+                        className="object-cover object-top"
+                      />
+                    </div>
+                  </div>
+                  {/* MacBook base */}
+                  <div className="mx-auto w-[60%] h-3 bg-gradient-to-b from-[#2a2a2c] to-[#1c1c1e] rounded-b-xl" />
                 </div>
 
                 {/* Text */}
