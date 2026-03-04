@@ -31,7 +31,7 @@ export default function StickyMobileCTA() {
               <Countdown compact />
             </div>
             <a
-              href="https://hub.culturabuilder.com"
+              href="https://hub.culturabuilder.com/hub/subscription?couponCode=OFF100SDMCB&planId=3"
               target="_blank"
               rel="noopener noreferrer"
               className="shrink-0 bg-green-cta hover:bg-green-cta-hover text-white font-bold text-sm px-5 py-3 rounded-full transition-all"

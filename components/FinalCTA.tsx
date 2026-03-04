@@ -58,7 +58,7 @@ export default function FinalCTA() {
 
           {/* CTA */}
           <a
-            href="https://hub.culturabuilder.com"
+            href="https://hub.culturabuilder.com/hub/subscription?couponCode=OFF100SDMCB&planId=3"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-green-cta hover:bg-green-cta-hover text-white font-bold text-lg px-12 py-5 rounded-full transition-all duration-300 pulse-cta hover:scale-105"

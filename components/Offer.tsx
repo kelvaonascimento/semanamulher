@@ -3,27 +3,32 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
+const CHECKOUT_URL =
+  "https://hub.culturabuilder.com/hub/subscription?couponCode=OFF100SDMCB&planId=3";
+
 const offers = [
   {
     tag: "OFERTA PRINCIPAL",
     tagColor: "bg-green-cta",
     tagText: "text-white",
     title: "7 dias GRÁTIS",
-    subtitle: "Acesso completo ao Hub",
+    subtitle: "Premium Completo — acesso total",
     price: "R$ 0",
-    priceNote: "",
+    priceNote: "R$ 2.998/ano",
     features: [
-      "Acesso completo ao Hub",
-      "12 cursos de IA e no-code",
-      "Brother AI incluso",
+      "Acesso completo ao Hub Premium",
+      "Todos os módulos e cursos inclusos",
+      "Brother AI + Tool Engenharia de Contexto",
+      "Claude Code, Workshops e Lives",
       "+R$ 20k em créditos AWS/NVIDIA",
+      "Github exclusivo + Fórum",
       "Sem cartão, sem compromisso",
     ],
     cta: "COMEÇAR TRIAL GRÁTIS",
     ctaStyle: "bg-green-cta hover:bg-green-cta-hover text-white pulse-cta",
-    href: "https://hub.culturabuilder.com",
+    href: CHECKOUT_URL,
     highlighted: true,
-    note: "100% grátis — sem pegadinha",
+    note: "100% grátis — cupom já aplicado",
   },
   {
     tag: "5 BOLSAS INTEGRAIS",
@@ -34,10 +39,11 @@ const offers = [
     price: "R$ 0",
     priceNote: "Valor: R$ 2.998",
     features: [
-      "1 ano completo no Hub Premium",
-      "Todos os cursos + certificados",
-      "Brother AI + mentoria",
+      "1 ano no Hub Premium Completo",
+      "Todos os cursos + certificação",
+      "Brother AI + mentoria da equipe",
       "Comunidade Mulheres Builders",
+      "Créditos AWS/NVIDIA inclusos",
       "Resultado dia 08/03",
     ],
     cta: "CONCORRER À BOLSA",
@@ -47,23 +53,24 @@ const offers = [
     note: "Inscrições até 07/03",
   },
   {
-    tag: "OFERTA ESPECIAL",
+    tag: "30% OFF",
     tagColor: "bg-purple-light",
     tagText: "text-white",
-    title: "30% OFF",
-    subtitle: "Hub Premium anual",
-    price: "R$ 2.098",
-    priceNote: "R$ 2.998",
+    title: "Premium Completo",
+    subtitle: "Para quem já fez o trial",
+    price: "12x R$ 174",
+    priceNote: "12x R$ 249,83",
     features: [
-      "Hub Premium completo por 1 ano",
-      "12 cursos + novos conteúdos",
+      "Hub Premium por 1 ano completo",
+      "Todos os módulos desbloqueados",
+      "Atualizações e novos conteúdos",
       "+R$ 20k em créditos inclusos",
       "Certificação Blockchain",
       "7 dias de garantia total",
     ],
     cta: "GARANTIR 30% OFF",
     ctaStyle: "bg-purple-light hover:bg-purple-glow text-white",
-    href: "https://hub.culturabuilder.com",
+    href: CHECKOUT_URL,
     highlighted: false,
     note: "Válido sábado e domingo apenas",
   },
@@ -104,7 +111,6 @@ export default function Offer() {
                   : "bg-gradient-to-b from-white/15 to-white/5"
               }`}
             >
-              {/* Popular badge */}
               {offer.highlighted && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-green-cta text-white text-xs font-bold px-4 py-1 rounded-full z-10">
                   MAIS POPULAR
@@ -112,20 +118,17 @@ export default function Offer() {
               )}
 
               <div className="h-full rounded-3xl bg-dark-card p-8 flex flex-col">
-                {/* Tag */}
                 <span
                   className={`inline-block self-start ${offer.tagColor} ${offer.tagText} text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-5`}
                 >
                   {offer.tag}
                 </span>
 
-                {/* Title */}
                 <h3 className="font-[family-name:var(--font-space-grotesk)] text-3xl font-bold mb-1">
                   {offer.title}
                 </h3>
                 <p className="text-white/40 text-sm mb-5">{offer.subtitle}</p>
 
-                {/* Price */}
                 <div className="mb-6">
                   <span className="text-3xl font-bold text-green-cta">
                     {offer.price}
@@ -137,7 +140,6 @@ export default function Offer() {
                   )}
                 </div>
 
-                {/* Features */}
                 <ul className="space-y-3 mb-8 flex-1">
                   {offer.features.map((f) => (
                     <li
@@ -162,17 +164,19 @@ export default function Offer() {
                   ))}
                 </ul>
 
-                {/* CTA */}
                 <a
                   href={offer.href}
                   target={offer.href.startsWith("http") ? "_blank" : undefined}
-                  rel={offer.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  rel={
+                    offer.href.startsWith("http")
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
                   className={`block w-full text-center font-bold py-4 rounded-full transition-all duration-300 hover:scale-[1.02] ${offer.ctaStyle}`}
                 >
                   {offer.cta}
                 </a>
 
-                {/* Note */}
                 <p className="text-white/30 text-xs text-center mt-3">
                   {offer.note}
                 </p>

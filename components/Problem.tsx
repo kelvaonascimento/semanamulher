@@ -8,24 +8,28 @@ const stats = [
   {
     value: 9,
     suffix: "%",
-    label: "Mulheres na base IG",
+    label: "Mulheres na base do Instagram",
+    detail: "De 7.600 seguidores, apenas ~684 são mulheres",
   },
   {
     value: 800,
     prefix: "~",
     suffix: "",
-    label: "Mulheres no Intercom",
+    label: "Mulheres cadastradas na CB",
+    detail: "Base feminina total registrada no Intercom",
   },
   {
     value: 20,
     suffix: "%",
-    label: "Mulheres em tech",
+    label: "Mulheres em tech no mercado",
+    detail: "Nossa base está abaixo da média do mercado",
   },
   {
     value: 47,
     prefix: "+",
     suffix: "%",
     label: "Crescimento mulheres + IA",
+    detail: "Mulheres em cursos de IA cresceram 47% em 2025",
   },
 ];
 
@@ -63,7 +67,7 @@ export default function Problem() {
             className="font-[family-name:var(--font-space-grotesk)] text-8xl md:text-[10rem] font-bold text-gradient-purple"
           />
           <p className="text-xl md:text-2xl text-white/60 mt-4">
-            do nosso público é feminino.
+            do nosso público no Instagram é feminino.
           </p>
           <p className="text-lg text-white/40 mt-2">
             Isso não é uma estatística.{" "}
@@ -71,7 +75,7 @@ export default function Problem() {
           </p>
         </motion.div>
 
-        {/* Stats grid - minimalist tech boxes */}
+        {/* Stats grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-14">
           {stats.map((stat, i) => (
             <motion.div
@@ -79,7 +83,7 @@ export default function Problem() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
-              className="card-shine glass glass-hover rounded-2xl p-6 text-center transition-all duration-500"
+              className="card-shine glass glass-hover rounded-2xl p-6 text-center transition-all duration-500 group"
             >
               <AnimatedCounter
                 target={stat.value}
@@ -87,8 +91,11 @@ export default function Problem() {
                 prefix={stat.prefix}
                 className="text-3xl md:text-4xl font-bold text-purple-light font-[family-name:var(--font-space-grotesk)]"
               />
-              <p className="text-xs text-white/30 uppercase tracking-wider mt-2">
+              <p className="text-xs text-white/40 uppercase tracking-wider mt-2 mb-2">
                 {stat.label}
+              </p>
+              <p className="text-[11px] text-white/20 leading-relaxed hidden group-hover:block transition-all">
+                {stat.detail}
               </p>
             </motion.div>
           ))}
@@ -102,9 +109,12 @@ export default function Problem() {
           className="text-center"
         >
           <p className="text-lg md:text-xl text-white/50">
+            Nossa base é 91% masculina — o mercado de tech é 80%.
+          </p>
+          <p className="text-white/40 text-sm mt-1 mb-3">
             Toda a concorrência também é dominada por homens.
           </p>
-          <p className="text-xl md:text-2xl font-bold text-gradient-purple mt-2">
+          <p className="text-xl md:text-2xl font-bold text-gradient-purple">
             Essa semana, a porta está aberta.
           </p>
         </motion.div>
