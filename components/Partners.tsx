@@ -36,6 +36,9 @@ export default function Partners() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
+  // Duplicate logos for seamless infinite scroll
+  const marqueeLogos = [...companyLogos, ...companyLogos, ...companyLogos, ...companyLogos];
+
   return (
     <section ref={ref} className="relative py-20 px-4">
       {/* Subtle bg glow */}
@@ -54,7 +57,7 @@ export default function Partners() {
         </motion.p>
 
         {/* Main partner cards */}
-        <div className="grid md:grid-cols-2 gap-5 mb-12">
+        <div className="grid md:grid-cols-2 gap-5 mb-14">
           {partners.map((p, i) => (
             <motion.div
               key={p.name}
@@ -63,7 +66,7 @@ export default function Partners() {
               transition={{ duration: 0.5, delay: 0.1 + i * 0.15 }}
               className="card-shine glass glass-hover rounded-2xl p-8 flex items-center gap-6 transition-all duration-500"
             >
-              <div className="shrink-0 w-24 h-16 bg-white/10 rounded-xl flex items-center justify-center p-2">
+              <div className="shrink-0 w-24 h-16 bg-white rounded-xl flex items-center justify-center p-3">
                 <Image
                   src={p.logo}
                   alt={p.name}
@@ -82,30 +85,39 @@ export default function Partners() {
           ))}
         </div>
 
-        {/* Company logos divider */}
+        {/* Company logos marquee */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <p className="text-center text-white/20 text-xs uppercase tracking-[0.2em] mb-8">
             Mentores com experiência em empresas como
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
-            {companyLogos.map((logo) => (
-              <div
-                key={logo.name}
-                className="opacity-40 hover:opacity-70 transition-opacity duration-300 grayscale hover:grayscale-0"
-              >
-                <Image
-                  src={logo.src}
-                  alt={logo.name}
-                  width={logo.w}
-                  height={logo.h}
-                  className="h-6 w-auto object-contain brightness-0 invert"
-                />
-              </div>
-            ))}
+
+          {/* Marquee container */}
+          <div className="relative overflow-hidden">
+            {/* Fade edges */}
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-dark to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-dark to-transparent z-10 pointer-events-none" />
+
+            {/* Scrolling track */}
+            <div className="flex items-center gap-16 animate-marquee w-max">
+              {marqueeLogos.map((logo, i) => (
+                <div
+                  key={`${logo.name}-${i}`}
+                  className="shrink-0 opacity-50 hover:opacity-80 transition-opacity duration-300"
+                >
+                  <Image
+                    src={logo.src}
+                    alt={logo.name}
+                    width={logo.w}
+                    height={logo.h}
+                    className="h-7 w-auto object-contain brightness-0 invert"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </motion.div>
       </div>
