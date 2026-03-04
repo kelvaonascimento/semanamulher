@@ -15,7 +15,7 @@ const stats = [
     value: 800,
     prefix: "~",
     suffix: "",
-    label: "Mulheres cadastradas na CB",
+    label: "Mulheres cadastradas no Cultura Builder",
     detail: "Base feminina total registrada no Intercom",
   },
   {

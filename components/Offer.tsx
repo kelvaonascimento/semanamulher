@@ -6,6 +6,9 @@ import { useRef } from "react";
 const CHECKOUT_URL =
   "https://hub.culturabuilder.com/hub/subscription?couponCode=OFF100SDMCB&planId=3";
 
+const CHECKOUT_30_URL =
+  "https://hub.culturabuilder.com/hub/subscription?couponCode=OFF30SDMCB&planId=3";
+
 const offers = [
   {
     tag: "OFERTA PRINCIPAL",
@@ -70,7 +73,7 @@ const offers = [
     ],
     cta: "GARANTIR 30% OFF",
     ctaStyle: "bg-purple-light hover:bg-purple-glow text-white",
-    href: CHECKOUT_URL,
+    href: CHECKOUT_30_URL,
     highlighted: false,
     note: "Válido sábado e domingo apenas",
   },
