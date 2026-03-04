@@ -56,12 +56,12 @@ export default function Scholarship() {
   };
 
   const inputClass =
-    "w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white text-sm placeholder:text-white/20 focus:outline-none focus:border-yellow-500/50 focus:bg-white/[0.07] transition-all duration-300";
+    "w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white text-sm placeholder:text-white/20 focus:outline-none focus:border-purple-light/50 focus:bg-white/[0.07] transition-all duration-300";
 
   return (
     <section ref={ref} id="bolsas" className="relative py-24 px-4">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-yellow-500/5 rounded-full blur-[150px]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-purple-dark/5 rounded-full blur-[150px]" />
       </div>
 
       <div className="relative max-w-5xl mx-auto">
@@ -72,7 +72,7 @@ export default function Scholarship() {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <span className="inline-block bg-yellow-500 text-black text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-6">
+          <span className="inline-block bg-purple-light text-white text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-6">
             Concorra agora
           </span>
           <h2 className="font-[family-name:var(--font-space-grotesk)] text-3xl md:text-5xl font-bold mb-4">
@@ -137,14 +137,14 @@ export default function Scholarship() {
               <div key={item.num} className="relative flex flex-col items-center text-center px-6 py-8">
                 {/* Connector line */}
                 {i < 2 && (
-                  <div className="hidden md:block absolute top-[52px] -right-0 w-full h-[1px] bg-gradient-to-r from-yellow-500/30 to-yellow-500/10 z-0" />
+                  <div className="hidden md:block absolute top-[52px] -right-0 w-full h-[1px] bg-gradient-to-r from-purple-light/30 to-purple-light/10 z-0" />
                 )}
-                <div className="relative z-10 w-14 h-14 rounded-2xl bg-gradient-to-br from-yellow-500/20 to-yellow-500/5 border border-yellow-500/30 flex items-center justify-center mb-5">
-                  <svg className="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="relative z-10 w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-dark/20 to-purple-dark/5 border border-purple-light/30 flex items-center justify-center mb-5">
+                  <svg className="w-6 h-6 text-purple-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     {item.icon}
                   </svg>
                 </div>
-                <span className="text-yellow-500/60 text-xs font-bold uppercase tracking-widest mb-2">
+                <span className="text-purple-light/60 text-xs font-bold uppercase tracking-widest mb-2">
                   Passo {item.num}
                 </span>
                 <h4 className="font-bold text-white text-base mb-3 font-[family-name:var(--font-space-grotesk)]">
@@ -163,16 +163,16 @@ export default function Scholarship() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="relative bg-white/[0.03] border border-yellow-500/20 rounded-3xl overflow-hidden"
+          className="relative bg-white/[0.03] border border-purple-light/20 rounded-3xl overflow-hidden"
         >
           {/* Glow effect */}
-          <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[400px] h-[200px] bg-yellow-500/10 rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[400px] h-[200px] bg-purple-dark/10 rounded-full blur-[100px] pointer-events-none" />
 
           <div className="relative">
             {/* Progress bar */}
             <div className="h-1 bg-white/5">
               <motion.div
-                className="h-full bg-gradient-to-r from-yellow-500 to-yellow-400"
+                className="h-full bg-gradient-to-r from-purple-light to-purple-glow"
                 initial={{ width: "0%" }}
                 animate={{ width: submitted ? "100%" : `${((step + 1) / TOTAL_STEPS) * 100}%` }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
@@ -200,11 +200,11 @@ export default function Scholarship() {
                       Sua inscrição foi recebida. Jess, Ju e Diana vão analisar sua história pessoalmente.
                     </p>
                     <p className="text-white/40 text-sm max-w-md">
-                      O resultado será anunciado no dia <strong className="text-yellow-400">08 de março (Dia da Mulher)</strong> nas
+                      O resultado será anunciado no dia <strong className="text-purple-glow">08 de março (Dia da Mulher)</strong> nas
                       redes da Cultura Builder e você será notificada pelo WhatsApp.
                     </p>
-                    <div className="mt-8 bg-yellow-500/10 border border-yellow-500/20 rounded-xl px-6 py-3">
-                      <p className="text-yellow-400 text-sm font-bold">
+                    <div className="mt-8 bg-purple-dark/10 border border-purple-light/20 rounded-xl px-6 py-3">
+                      <p className="text-purple-glow text-sm font-bold">
                         Boa sorte, builder! ✨
                       </p>
                     </div>
@@ -225,9 +225,9 @@ export default function Scholarship() {
                           onClick={() => i < step && setStep(i)}
                           className={`h-2 rounded-full transition-all duration-300 ${
                             i === step
-                              ? "w-8 bg-yellow-500"
+                              ? "w-8 bg-purple-light"
                               : i < step
-                              ? "w-2 bg-yellow-500/50 cursor-pointer hover:bg-yellow-500/70"
+                              ? "w-2 bg-purple-dark/50 cursor-pointer hover:bg-purple-light/70"
                               : "w-2 bg-white/10"
                           }`}
                         />
@@ -240,8 +240,8 @@ export default function Scholarship() {
                     {/* STEP 0 - Welcome */}
                     {step === 0 && (
                       <div className="text-center py-4">
-                        <div className="w-16 h-16 rounded-2xl bg-yellow-500/20 border border-yellow-500/30 flex items-center justify-center mx-auto mb-6">
-                          <svg className="w-8 h-8 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="w-16 h-16 rounded-2xl bg-purple-dark/20 border border-purple-light/30 flex items-center justify-center mx-auto mb-6">
+                          <svg className="w-8 h-8 text-purple-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
                           </svg>
                         </div>
@@ -249,7 +249,7 @@ export default function Scholarship() {
                           Concorra a 1 ano de Hub Premium
                         </h3>
                         <p className="text-white/50 text-sm max-w-lg mx-auto mb-6 leading-relaxed">
-                          Estamos oferecendo <strong className="text-yellow-400">5 bolsas integrais</strong> (valor: R$ 2.998 cada) para mulheres
+                          Estamos oferecendo <strong className="text-purple-glow">5 bolsas integrais</strong> (valor: R$ 2.998 cada) para mulheres
                           que querem aprender IA e construir sem programar. Conte sua história em poucos passos.
                         </p>
                         <div className="grid sm:grid-cols-3 gap-3 max-w-lg mx-auto mb-2">
@@ -385,10 +385,10 @@ export default function Scholarship() {
                           onDrop={handleDrop}
                           className={`relative border-2 border-dashed rounded-2xl p-8 text-center transition-all duration-300 mb-6 ${
                             dragOver
-                              ? "border-yellow-500 bg-yellow-500/10"
+                              ? "border-purple-light bg-purple-dark/10"
                               : videoFile
                               ? "border-green-cta/50 bg-green-cta/5"
-                              : "border-white/10 hover:border-yellow-500/30 hover:bg-white/[0.02]"
+                              : "border-white/10 hover:border-purple-light/30 hover:bg-white/[0.02]"
                           }`}
                         >
                           {videoFile ? (
@@ -414,15 +414,15 @@ export default function Scholarship() {
                             </div>
                           ) : (
                             <div className="flex flex-col items-center gap-3">
-                              <div className="w-12 h-12 rounded-full bg-yellow-500/10 flex items-center justify-center">
-                                <svg className="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <div className="w-12 h-12 rounded-full bg-purple-dark/10 flex items-center justify-center">
+                                <svg className="w-6 h-6 text-purple-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z" />
                                 </svg>
                               </div>
                               <div>
                                 <p className="text-white/60 text-sm">
                                   Arraste seu vídeo aqui ou{" "}
-                                  <label className="text-yellow-400 hover:text-yellow-300 cursor-pointer underline transition-colors">
+                                  <label className="text-purple-glow hover:text-purple-light cursor-pointer underline transition-colors">
                                     clique para selecionar
                                     <input
                                       type="file"
@@ -450,7 +450,7 @@ export default function Scholarship() {
                               "Não precisa ser profissional",
                             ].map((tip) => (
                               <div key={tip} className="flex items-center gap-2">
-                                <svg className="w-3.5 h-3.5 text-yellow-500/50 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg className="w-3.5 h-3.5 text-purple-light/50 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                 </svg>
                                 <span className="text-white/40 text-xs">{tip}</span>
@@ -487,7 +487,7 @@ export default function Scholarship() {
                           type="button"
                           onClick={() => canAdvance() && setStep(step + 1)}
                           disabled={!canAdvance()}
-                          className="flex items-center gap-2 bg-yellow-500 hover:bg-yellow-400 disabled:opacity-30 disabled:cursor-not-allowed text-black font-bold text-sm px-8 py-3 rounded-full transition-all duration-300 hover:scale-[1.02]"
+                          className="flex items-center gap-2 bg-purple-light hover:bg-purple-glow disabled:opacity-30 disabled:cursor-not-allowed text-white font-bold text-sm px-8 py-3 rounded-full transition-all duration-300 hover:scale-[1.02]"
                         >
                           {step === 0 ? "Começar inscrição" : "Próximo"}
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -499,7 +499,7 @@ export default function Scholarship() {
                           type="button"
                           onClick={handleSubmit}
                           disabled={loading}
-                          className="flex items-center gap-2 bg-yellow-500 hover:bg-yellow-400 disabled:opacity-50 disabled:cursor-not-allowed text-black font-bold text-sm px-8 py-3 rounded-full transition-all duration-300 hover:scale-[1.02]"
+                          className="flex items-center gap-2 bg-purple-light hover:bg-purple-glow disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold text-sm px-8 py-3 rounded-full transition-all duration-300 hover:scale-[1.02]"
                         >
                           {loading ? (
                             <>
@@ -531,27 +531,33 @@ export default function Scholarship() {
           </div>
         </motion.div>
 
-        {/* What you get */}
+        {/* What the scholarship winner gets */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="mt-10 grid sm:grid-cols-2 md:grid-cols-4 gap-3"
+          className="mt-12"
         >
-          {[
-            { icon: "🎓", label: "Hub Premium 1 ano" },
-            { icon: "🤖", label: "Claude Code + Brother AI" },
-            { icon: "☁️", label: "+R$ 20k créditos AWS/NVIDIA" },
-            { icon: "👩‍💻", label: "Comunidade Mulheres Builders" },
-          ].map((item) => (
-            <div
-              key={item.label}
-              className="glass rounded-xl p-4 text-center"
-            >
-              <span className="text-lg block mb-2">{item.icon}</span>
-              <span className="text-white/50 text-xs">{item.label}</span>
-            </div>
-          ))}
+          <h3 className="text-center text-white/40 text-xs uppercase tracking-[0.25em] mb-6">
+            O que a bolsista ganha
+          </h3>
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { icon: "🎓", title: "Hub Premium 1 ano", desc: "Acesso completo a todos os módulos, do iniciante ao avançado" },
+              { icon: "🤖", title: "Claude Code + Brother AI", desc: "Ferramentas de IA para construir projetos reais sem programar" },
+              { icon: "☁️", title: "+R$ 20k em créditos", desc: "Infraestrutura AWS e NVIDIA para rodar seus projetos de IA" },
+              { icon: "👩‍💻", title: "Comunidade exclusiva", desc: "Rede Mulheres Builders + fórum + GitHub privado + certificação" },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="card-shine glass glass-hover rounded-2xl p-6 text-center transition-all duration-500 group"
+              >
+                <span className="text-3xl block mb-3">{item.icon}</span>
+                <h4 className="text-white font-bold text-sm mb-2 group-hover:text-purple-glow transition-colors">{item.title}</h4>
+                <p className="text-white/30 text-xs leading-relaxed group-hover:text-white/50 transition-colors">{item.desc}</p>
+              </div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import CampaignConcept from "@/components/CampaignConcept";
 import Partners from "@/components/Partners";
 import Problem from "@/components/Problem";
 import Offer from "@/components/Offer";
@@ -18,6 +19,7 @@ export default function Home() {
     <main className="relative overflow-hidden">
       <Navbar />
       <Hero />
+      <CampaignConcept />
       <Partners />
       <Problem />
       <Offer />
