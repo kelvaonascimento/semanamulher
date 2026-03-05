@@ -15,7 +15,7 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "Mulheres que Constroem | Cultura Builder — 7 Dias Grátis",
   description:
-    "Não é sobre flores. É sobre código. 7 dias GRÁTIS no Hub Cultura Builder. 12 cursos de IA e no-code. Sem cartão. Semana da Mulher 2026.",
+    "Além das flores: Incentivo real. Mulheres ocupando espaços na tecnologia. 7 dias GRÁTIS no Hub Cultura Builder. 12 cursos de IA e no-code. Sem cartão. Semana da Mulher 2026.",
   keywords: [
     "mulheres na tecnologia",
     "IA para mulheres",
@@ -28,14 +28,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Mulheres que Constroem | 7 Dias Grátis",
     description:
-      "Não é sobre flores. É sobre código. 12 cursos de IA e no-code, grátis por 7 dias. Sem cartão.",
+      "Além das flores: Incentivo real. Mulheres ocupando espaços na tecnologia. 12 cursos de IA e no-code, grátis por 7 dias. Sem cartão.",
     type: "website",
     locale: "pt_BR",
   },
   twitter: {
     card: "summary_large_image",
     title: "Mulheres que Constroem | Cultura Builder",
-    description: "Não é sobre flores. É sobre código. 7 dias GRÁTIS.",
+    description: "Além das flores: Incentivo real. Mulheres ocupando espaços na tecnologia. 7 dias GRÁTIS.",
   },
 };
 

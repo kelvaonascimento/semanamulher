@@ -53,10 +53,9 @@ export default function FinalCTA() {
           </h2>
 
           <p className="text-white/50 text-lg max-w-xl mx-auto mb-4 leading-relaxed">
-            Não precisam de parabéns. Precisam de{" "}
-            <strong className="text-white">ferramentas</strong>.
-            <br />
-            Não precisam de permissão. Precisam de{" "}
+            Mulheres ocupando espaços na tecnologia com{" "}
+            <strong className="text-white">ferramentas</strong>,{" "}
+            <strong className="text-white">comunidade</strong> e{" "}
             <strong className="text-white">oportunidade</strong>.
           </p>
 
