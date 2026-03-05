@@ -14,8 +14,9 @@ export default function Hero() {
         />
         {/* Desktop overlay - darken left for text */}
         <div className="absolute inset-0 bg-gradient-to-r from-dark/90 via-dark/60 to-dark/30 hidden md:block" />
-        {/* Mobile overlay - only bottom fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-dark to-transparent md:hidden" />
+        {/* Mobile overlay - solid dark from bottom up to text area */}
+        <div className="absolute bottom-0 left-0 right-0 h-[55%] bg-dark md:hidden" />
+        <div className="absolute bottom-[55%] left-0 right-0 h-[15%] bg-gradient-to-t from-dark to-transparent md:hidden" />
         {/* Desktop bottom fade */}
         <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-dark to-transparent hidden md:block" />
         {/* Noise */}
@@ -42,7 +43,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 w-full pb-16 -mt-10 md:mt-0 md:pt-40 md:pb-28">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 w-full pb-24 -mt-10 md:mt-0 md:pt-40 md:pb-28">
         <div className="max-w-xl md:max-w-xl mx-auto md:mx-0 text-center md:text-left">
           {/* Badge - desktop only */}
           <motion.div
@@ -126,9 +127,9 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="flex flex-col sm:flex-row items-center md:items-start sm:items-center gap-6"
+            className="flex flex-col items-center md:items-start sm:flex-row sm:items-center gap-4 sm:gap-6"
           >
-            <div>
+            <div className="text-center md:text-left">
               <p className="text-xs text-white/30 uppercase tracking-[0.15em] mb-2">
                 A porta fecha em
               </p>

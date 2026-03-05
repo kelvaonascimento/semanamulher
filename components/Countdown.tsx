@@ -46,23 +46,30 @@ export default function Countdown({ compact = false }: { compact?: boolean }) {
   if (!mounted) return null;
 
   if (compact) {
+    const cBlocks = [
+      { value: timeLeft.days, label: "d" },
+      { value: timeLeft.hours, label: "h" },
+      { value: timeLeft.minutes, label: "m" },
+      { value: timeLeft.seconds, label: "s" },
+    ];
+
     return (
-      <div className="flex items-center gap-1 text-sm font-mono">
-        <span className="bg-purple-dark/80 px-2 py-1 rounded text-white">
-          {String(timeLeft.days).padStart(2, "0")}d
-        </span>
-        <span>:</span>
-        <span className="bg-purple-dark/80 px-2 py-1 rounded text-white">
-          {String(timeLeft.hours).padStart(2, "0")}h
-        </span>
-        <span>:</span>
-        <span className="bg-purple-dark/80 px-2 py-1 rounded text-white">
-          {String(timeLeft.minutes).padStart(2, "0")}m
-        </span>
-        <span>:</span>
-        <span className="bg-purple-dark/80 px-2 py-1 rounded text-white">
-          {String(timeLeft.seconds).padStart(2, "0")}s
-        </span>
+      <div className="flex items-center gap-1.5">
+        {cBlocks.map((block, i) => (
+          <div key={block.label} className="flex items-center gap-1.5">
+            <div className="flex items-baseline gap-0.5">
+              <span className="text-sm font-bold font-[family-name:var(--font-space-grotesk)] text-white tabular-nums">
+                {String(block.value).padStart(2, "0")}
+              </span>
+              <span className="text-[10px] text-purple-glow font-medium">
+                {block.label}
+              </span>
+            </div>
+            {i < cBlocks.length - 1 && (
+              <span className="text-purple-light/40 text-xs">:</span>
+            )}
+          </div>
+        ))}
       </div>
     );
   }
