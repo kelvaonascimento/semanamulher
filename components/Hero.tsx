@@ -30,7 +30,7 @@ export default function Hero() {
       </div>
 
       {/* Mobile spacer: push content down so woman is visible at top */}
-      <div className="relative w-full h-[35vh] sm:h-[40vh] md:hidden shrink-0">
+      <div className="relative w-full h-[42vh] sm:h-[45vh] md:hidden shrink-0">
         {/* Badge floating over image on mobile */}
         <motion.div
           initial={{ opacity: 0, y: 20, scale: 0.9 }}
@@ -72,11 +72,15 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="font-[family-name:var(--font-space-grotesk)] text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.05] mb-6"
+            className="font-[family-name:var(--font-space-grotesk)] text-3xl sm:text-4xl md:text-6xl font-bold leading-[1.15] mb-6"
           >
-            Não é sobre flores.
+            Além das flores:
             <br />
-            <span className="text-gradient-purple">É sobre código.</span>
+            <span className="text-gradient-purple">Incentivo real.</span>
+            <br />
+            Mulheres ocupando espaços
+            <br />
+            na tecnologia.
           </motion.h1>
 
           {/* Subheadline */}

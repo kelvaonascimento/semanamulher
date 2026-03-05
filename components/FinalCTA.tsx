@@ -44,11 +44,11 @@ export default function FinalCTA() {
             A porta fecha em breve
           </p>
 
-          <h2 className="font-[family-name:var(--font-space-grotesk)] text-4xl md:text-6xl font-bold mb-8 leading-tight">
-            Não precisam de flores.
+          <h2 className="font-[family-name:var(--font-space-grotesk)] text-3xl sm:text-4xl md:text-6xl font-bold mb-8 leading-tight">
+            Além das flores:
             <br />
             <span className="text-gradient-purple">
-              Precisam de código.
+              Incentivo real.
             </span>
           </h2>
 
