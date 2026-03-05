@@ -38,7 +38,7 @@ export default function Problem() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="relative py-24 px-4">
+    <section ref={ref} className="relative py-14 sm:py-20 md:py-24 px-4">
       {/* AI-generated background */}
       <div className="absolute inset-0 pointer-events-none">
         <div
@@ -72,7 +72,7 @@ export default function Problem() {
           <AnimatedCounter
             target={9}
             suffix="%"
-            className="font-[family-name:var(--font-space-grotesk)] text-8xl md:text-[10rem] font-bold text-gradient-purple"
+            className="font-[family-name:var(--font-space-grotesk)] text-6xl sm:text-8xl md:text-[10rem] font-bold text-gradient-purple"
           />
           <p className="text-xl md:text-2xl text-white/60 mt-4">
             do nosso público no Instagram é feminino.
@@ -84,7 +84,7 @@ export default function Problem() {
         </motion.div>
 
         {/* Stats grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-14">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-14">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}

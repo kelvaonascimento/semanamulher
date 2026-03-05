@@ -16,7 +16,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function Home() {
   return (
-    <main className="relative overflow-hidden">
+    <main className="relative overflow-hidden pb-16 md:pb-0">
       <Navbar />
       <Hero />
       <CampaignConcept />

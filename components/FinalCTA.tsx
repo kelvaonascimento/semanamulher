@@ -15,7 +15,7 @@ export default function FinalCTA() {
     <section
       ref={ref}
       id="checkout"
-      className="relative py-28 px-4 overflow-hidden"
+      className="relative py-16 sm:py-24 md:py-28 px-4 overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-dark/20 to-purple-dark/30 pointer-events-none" />

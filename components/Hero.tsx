@@ -6,10 +6,16 @@ import Countdown from "./Countdown";
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col md:flex-row md:items-center overflow-hidden">
-      {/* Background: Same mobile image on both desktop and mobile */}
+      {/* Background */}
       <div className="absolute inset-0">
+        {/* Desktop: ultrawide image */}
         <div
-          className="absolute inset-0 bg-cover bg-[center_20%] bg-no-repeat"
+          className="absolute inset-0 hidden md:block bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/images/hero-bg.png')" }}
+        />
+        {/* Mobile: portrait image */}
+        <div
+          className="absolute inset-0 md:hidden bg-cover bg-top bg-no-repeat"
           style={{ backgroundImage: "url('/images/hero-bg-mobile.png')" }}
         />
         {/* Desktop overlay - darken left for text */}
@@ -24,7 +30,7 @@ export default function Hero() {
       </div>
 
       {/* Mobile spacer: push content down so woman is visible at top */}
-      <div className="relative w-full h-[50vh] md:hidden shrink-0">
+      <div className="relative w-full h-[35vh] sm:h-[40vh] md:hidden shrink-0">
         {/* Badge floating over image on mobile */}
         <motion.div
           initial={{ opacity: 0, y: 20, scale: 0.9 }}
@@ -94,7 +100,7 @@ export default function Hero() {
           >
             <a
               href="#trial"
-              className="group inline-flex items-center gap-3 bg-green-cta hover:bg-green-cta-hover text-white font-bold text-base md:text-lg px-8 md:px-10 py-4 rounded-full transition-all duration-300 pulse-cta hover:scale-105 whitespace-nowrap"
+              className="group inline-flex items-center gap-3 bg-green-cta hover:bg-green-cta-hover text-white font-bold text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-10 py-4 rounded-full transition-all duration-300 pulse-cta hover:scale-105 whitespace-nowrap"
             >
               COMEÇAR AGORA — É GRÁTIS
               <svg

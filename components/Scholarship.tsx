@@ -59,7 +59,7 @@ export default function Scholarship() {
     "w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white text-sm placeholder:text-white/20 focus:outline-none focus:border-purple-light/50 focus:bg-white/[0.07] transition-all duration-300";
 
   return (
-    <section ref={ref} id="bolsas" className="relative py-24 px-4">
+    <section ref={ref} id="bolsas" className="relative py-14 sm:py-20 md:py-24 px-4">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-purple-dark/5 rounded-full blur-[150px]" />
       </div>

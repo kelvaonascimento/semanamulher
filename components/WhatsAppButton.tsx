@@ -26,7 +26,7 @@ export default function WhatsAppButton() {
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0, opacity: 0 }}
           transition={{ type: "spring", stiffness: 260, damping: 20 }}
-          className="fixed bottom-20 right-4 z-40 w-14 h-14 bg-[#25D366] hover:bg-[#20BD5A] rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:shadow-[0_4px_30px_rgba(37,211,102,0.6)] transition-all duration-300 hover:scale-110 md:bottom-8 md:right-8 md:z-50"
+          className="fixed bottom-[72px] right-4 z-40 w-14 h-14 bg-[#25D366] hover:bg-[#20BD5A] rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:shadow-[0_4px_30px_rgba(37,211,102,0.6)] transition-all duration-300 hover:scale-110 md:bottom-8 md:right-8 md:z-50"
           aria-label="WhatsApp"
         >
           <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">

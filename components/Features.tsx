@@ -83,7 +83,7 @@ export default function Features() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="relative py-24 px-4">
+    <section ref={ref} className="relative py-14 sm:py-20 md:py-24 px-4">
       <div className="absolute inset-0 pointer-events-none">
         <div
           className="absolute inset-0 opacity-20 bg-cover bg-center bg-no-repeat"

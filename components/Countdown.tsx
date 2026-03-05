@@ -82,16 +82,16 @@ export default function Countdown({ compact = false }: { compact?: boolean }) {
   ];
 
   return (
-    <div className="flex gap-3">
+    <div className="flex gap-2 sm:gap-3">
       {blocks.map((block) => (
         <div
           key={block.label}
-          className="flex flex-col items-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-3 min-w-[70px]"
+          className="flex flex-col items-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-3 py-2 sm:px-4 sm:py-3 min-w-[58px] sm:min-w-[70px]"
         >
-          <span className="text-3xl md:text-4xl font-bold font-[family-name:var(--font-space-grotesk)] text-white tabular-nums">
+          <span className="text-2xl sm:text-3xl md:text-4xl font-bold font-[family-name:var(--font-space-grotesk)] text-white tabular-nums">
             {String(block.value).padStart(2, "0")}
           </span>
-          <span className="text-xs text-white/50 uppercase tracking-wider mt-1">
+          <span className="text-[10px] sm:text-xs text-white/50 uppercase tracking-wider mt-1">
             {block.label}
           </span>
         </div>

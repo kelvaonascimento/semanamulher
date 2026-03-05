@@ -26,7 +26,7 @@ export default function CampaignConcept() {
         style={{ background: "linear-gradient(180deg, #1a1020 0%, #0F0F0F 100%)" }}
       >
         {/* Full-width hero image with overlay - like Missão ELA */}
-        <div className="relative h-[500px] md:h-[600px] overflow-hidden">
+        <div className="relative h-[350px] sm:h-[450px] md:h-[600px] overflow-hidden">
           <Image
             src="/images/women-collab.png"
             alt="Mulheres construindo com tecnologia"
@@ -138,7 +138,7 @@ export default function CampaignConcept() {
       </section>
 
       {/* Section 2: White concept - like Clínica Aura's "Descubra" section */}
-      <section className="relative py-24 px-4 bg-white overflow-hidden">
+      <section className="relative py-14 sm:py-20 md:py-24 px-4 bg-white overflow-hidden">
         <div className="absolute top-1/2 right-0 -translate-y-1/2 font-[family-name:var(--font-space-grotesk)] text-[180px] md:text-[280px] font-bold text-purple-dark/[0.03] leading-none select-none pointer-events-none">
           CB
         </div>
